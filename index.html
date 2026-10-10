@@ -1,163 +1,904 @@
-ويبقي فيه مكان ل اضافة التلجرام بوت عشان النوتفكيشن و فيه كل ده ولما يضغط علي بحث ميعاد او شئ يطلعله اشعار سبسكريبشن ويتواصل مع التلجرام t.me/IQROUTER 
-
-او WA.ME/201286669272Portugal — Guinea-Bissau
-
-
-
-البوت يكون فيه مساران منفصلان:
-
-
-
-1. VISA — VFS Global
-
-
-
-Flow:
-
-
-
-اختيار الدولة: Guinea-Bissau
-
-اختيار الوجهة: Portugal
-
-اختيار نوع الخدمة: Visa
-
-فتح منصة VFS Global
-
-تسجيل الدخول / الجلسة
-
-اختيار Visa Category
-
-اختيار Visa Type / Subcategory إذا ظهرت
-
-إدخال بيانات المتقدم
-
-اختيار مركز التقديم إذا كان متاحًا
-
-فحص المواعيد
-
-اختيار التاريخ
-
-اختيار الساعة
-
-مراجعة البيانات
-
-تأكيد الموعد
-
-حفظ بيانات الموعد / Confirmation
-
-
-
-البيانات التي يجب أن يدعمها البوت:
-
-
-
-First Name
-
-Last Name
-
-Passport Number
-
-Date of Birth
-
-Nationality
-
-Email
-
-Phone
-
-Visa Category
-
-Visa Type
-
-Application Centre
-
-Preferred Date
-
-Preferred Time
-
-
-
-والأهم أن Visa Category وVisa Type يكونان Dynamic؛ البوت يقرأ الخيارات الموجودة فعليًا من VFS بدل ما تفترض أنت قائمة ثابتة.
-
-
-
-2. CONSULAR — MNE Portugal
-
-
-
-وده منفصل عن VFS تمامًا.
-
-
-
-Flow:
-
-
-
-اختيار الدولة: Guinea-Bissau
-
-اختيار الوجهة: Portugal
-
-اختيار نوع الخدمة: Consular
-
-فتح منصة MNE Agendamentos
-
-تسجيل الدخول / المصادقة
-
-اختيار Posto Consular
-
-Bissau
-
-اختيار Ato / Serviço
-
-ظهور الخدمات التابعة للخدمة المختارة
-
-إدخال بيانات الشخص المطلوبة
-
-فحص المواعيد
-
-اختيار التاريخ
-
-اختيار الساعة
-
-مراجعة البيانات
-
-تأكيد الحجز
-
-حفظ Confirmation
-
-أهم نقطة في الـConsular
-
-
-
-لا تسمي المستوى الأساسي Visa Category.
-
-
-
-خليه:
-
-
-
-Consular Service → Ato/Serviço
-
-
-
-لأن القنصلية تتعامل مع خدمات مختلفة، مثل:
-
-
-
-Autenticações / Recognition of signatures
-
-Cartão de Cidadão
-
-Passaporte
-
-وأعمال قنصلية أخرى
-
-
-
-والخدمات نفسها يجب أن تكون Dynamic من الموقع، وليس قائمة ثابتة داخل البوت.
-
-https://visa.vfsglobal.com/gnb/pt/prt/login
-
-https://agendamentos.mne.gov.pt/pt/login
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>استاشيرني | منصة استشارات د. أسماء رضا — علاج طبيعي وتأهيل ودعم نفسي</title>
+  <meta name="description" content="منصة استشارات د. أسماء رضا — أخصائية علاج طبيعي وتأهيل حركي واستشارات نفسية. برامج علاجية متكاملة لصحة المرأة، العظام، الإصابات، الأعصاب، الأطفال، وكبار السن. احجز استشارتك الآن.">
+  <meta name="keywords" content="استاشيرني, علاج طبيعي, تأهيل, استشارات نفسية, أسماء رضا, صحة المرأة, العظام والمفاصل, إصابات رياضية, الأعصاب, الأطفال, كبار السن, فيزيوثيرابي, منصة استشارات">
+  <meta name="author" content="د. أسماء رضا">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (Social Sharing) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ar_EG">
+  <meta property="og:title" content="استاشيرني | منصة استشارات د. أسماء رضا — علاج طبيعي وتأهيل ودعم نفسي">
+  <meta property="og:description" content="منصة استشارات متكاملة تجمع بين العلاج الطبيعي والتأهيل الحركي والاستشارات النفسية مع د. أسماء رضا. احجز استشارتك الآن عبر الموقع أو واتساب.">
+  <meta property="og:site_name" content="منصة استاشيرني — د. أسماء رضا">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="استاشيرني | منصة استشارات د. أسماء رضا — علاج طبيعي وتأهيل ودعم نفسي">
+  <meta name="twitter:description" content="منصة استشارات وبرامج علاجية وتأهيلية متكاملة لصحة الجسد والنفس مع د. أسماء رضا. احجز استشارتك الآن.">
+
+  <!-- Google Fonts - Cairo (Arabic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Sticky Header & Navbar -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <a href="#hero" class="brand" aria-label="الصفحة الرئيسية - استاشيرني">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+            <path d="M12 9v6m-3-3h6"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="doctor-name">استاشيرني</span>
+          <span class="doctor-specialty">مع د. أسماء رضا</span>
+        </div>
+      </a>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="فتح القائمة الرئيسية" aria-expanded="false" aria-controls="primaryNav">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- Navigation Menu -->
+      <nav class="nav-menu" id="primaryNav">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#hero" class="nav-link active">الرئيسية</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">عن المنصة</a></li>
+          <li class="nav-item"><a href="#specialties" class="nav-link">التخصصات</a></li>
+          <li class="nav-item"><a href="#booking" class="nav-link">احجز استشارة</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">تواصل معنا</a></li>
+        </ul>
+        <div class="nav-cta-wrapper">
+          <a href="#booking" id="navBookingCta" class="btn btn-primary nav-cta" aria-label="احجز استشارة الآن عبر منصة استاشيرني">احجز استشارة</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="mainContent">
+    <!-- Hero Section -->
+    <section class="hero-section reveal-section" id="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="badge hero-badge">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            رعاية طبية متكاملة لصحة الجسد والنفس
+          </div>
+
+          <h1 class="hero-title">
+            استاشيرني
+            <span class="hero-highlight">منصة استشاراتك المتخصصة في العلاج الطبيعي والتأهيل والدعم النفسي — مع د. أسماء رضا</span>
+          </h1>
+
+          <p class="hero-description">
+            نجمع بين أحدث برامج التأهيل الحركي والعلاج الطبيعي التخصصي وبين الدعم والاستشارات النفسية، لتقديم خطة علاجية شاملة تعيد لك توازنك وصحتك وجودة حياتك اليومية.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#booking" class="btn btn-primary hero-btn">
+              احجز استشارة
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="tel:01017782403" class="btn btn-outline hero-phone-btn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <span>اتصال مباشر: 01017782403</span>
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="hero-features">
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+              </div>
+              <span>جلسات فردية متخصصة</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+              </div>
+              <span>تكامل جسدي ونفسي</span>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 6L9 17l-5-5"/>
+                </svg>
+              </div>
+              <span>متابعة خطوة بخطوة</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-visual">
+            <div class="visual-badge">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+              <span>حجز واستشارة دقيقة</span>
+            </div>
+
+            <!-- Medical Illustration Graphic (SVG) -->
+            <div class="medical-art">
+              <svg viewBox="0 0 300 280" class="art-svg" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="circleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#6FA8C7" stop-opacity="0.3"/>
+                    <stop offset="100%" stop-color="#244A68" stop-opacity="0.1"/>
+                  </linearGradient>
+                </defs>
+                <circle cx="150" cy="140" r="110" fill="url(#circleGrad)"/>
+                <!-- Shield Base -->
+                <path d="M150 40 L230 75 V140 C230 195 150 240 150 240 C150 240 70 195 70 140 V75 Z" fill="#FFFFFF" stroke="#244A68" stroke-width="4" stroke-linejoin="round"/>
+                <!-- Medical Cross -->
+                <rect x="135" y="85" width="30" height="70" rx="6" fill="#244A68"/>
+                <rect x="115" y="105" width="70" height="30" rx="6" fill="#244A68"/>
+                <!-- Healing Pulse Line -->
+                <path d="M95 180 H125 L135 160 L145 200 L158 170 L168 185 L175 180 H205" fill="none" stroke="#6FA8C7" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <!-- Floating Stat Cards -->
+            <div class="floating-stat stat-1">
+              <span class="stat-num">+1000</span>
+              <span class="stat-text">حالة تماثلت للشفاء والتأهيل</span>
+            </div>
+            <div class="floating-stat stat-2">
+              <span class="stat-num">100%</span>
+              <span class="stat-text">خطط علاجية مخصصة لكل حالة</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section ("عن المنصة") -->
+    <section class="about-section reveal-section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">رؤيتنا ورسالتنا</span>
+          <h2 class="section-title">عن المنصة</h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle">
+            نؤمن بأن التعافي الحقيقي يبدأ عندما يلتقي الشفاء الجسدي بالراحة النفسية عبر منصة استشارات متخصصة تجمع بين الجلسات الأونلاين والحضورية في بيئة احترافية وآمنة.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-image-card">
+            <div class="about-badge-card">
+              <span class="doctor-title">استاشيرني</span>
+              <p class="doctor-sub">منصة استشارات متخصصة في العلاج الطبيعي والتأهيل الحركي والدعم النفسي — مع د. أسماء رضا</p>
+            </div>
+            <div class="about-highlights-list">
+              <div class="about-highlight-item">
+                <div class="highlight-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>تقييم طبي وتشخيص دقيق</h4>
+                  <p>تحديد الأسباب الجذرية للألم واختلال الحركة قبل البدء بأي برنامج علاجي أو استشاري.</p>
+                </div>
+              </div>
+              <div class="about-highlight-item">
+                <div class="highlight-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>تأهيل حركي وعضلي مدروس</h4>
+                  <p>تمارين علاجية وتأهيلية موجهة لاستعادة المرونة، القوة، والتوازن الطبيعي.</p>
+                </div>
+              </div>
+              <div class="about-highlight-item">
+                <div class="highlight-icon">
+                  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                    <polyline points="22 4 12 14.01 9 11.01"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4>دعم واستشارات نفسية تكميلية</h4>
+                  <p>مساعدة المستفيد على تجاوز ضغوط الألم المزمن وبناء خطة للتكيف واستعادة جودة الحياة.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-text-content">
+            <h3 class="about-lead">رعاية صحية واستشارات تبدأ بالاستماع إليك وتنتهي باستعادتك لكامل نشاطك</h3>
+            <p>
+              تتميز منصة <strong>استاشيرني</strong> مع <strong>د. أسماء رضا</strong> بنهج فريد يدمج بين العلاج الطبيعي والتأهيل الحركي وبين الاستشارات والدعم النفسي عبر جلسات واستشارات متخصصة (أونلاين وحضورياً). فالألم المزمن والإصابات الجسدية غالباً ما تترك أثراً على الحالة المعنوية والنفسية، والعكس صحيح؛ حيث ينعكس التوتر والضغط النفسي على عضلات الجسم وفقراته.
+            </p>
+            <p>
+              نحن لا نكتفي بمسكنات مؤقتة، بل نعمل على خطة استشارية وتأهيلية مخصصة تشمل:
+            </p>
+            <ul class="about-checkmarks">
+              <li>جلسات فردية (أونلاين وحضورياً) يُعطى فيها لكل مستفيد كامل الوقت والاهتمام.</li>
+              <li>استخدام تقنيات علاجية وتأهيلية معتمدة وفق أحدث التوصيات الطبية.</li>
+              <li>متابعة مستمرة لتطور الحالة مع برامج توعية وتمارين منزلية.</li>
+              <li>بيئة احترافية تضمن أعلى درجات الخصوصية والراحة للمستفيد.</li>
+            </ul>
+
+            <div class="about-action">
+              <a href="#specialties" class="btn btn-primary">استعرض التخصصات المتاحة</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specialties Section ("التخصصات") - 7 Cards -->
+    <section class="specialties-section reveal-section" id="specialties">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">خدماتنا التخصصية</span>
+          <h2 class="section-title">التخصصات والخدمات العلاجية</h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle">
+            اختار التخصص المناسب واستعرض الخدمات المتاحة — من الاستشارات النفسية والعلاج النفسي، للعلاج الطبيعي وتأهيل قاع الحوض، لدعم الحوامل وما بعد الحمل، للفيبروميالجيا والأعراض النفس-جسدية.
+          </p>
+        </div>
+
+        <div class="specialties-grid">
+          <!-- Card 1: صحة المرأة (نساء) -->
+          <details class="specialty-card">
+            <summary class="specialty-summary">
+              <div class="summary-main">
+                <div class="specialty-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="5"/>
+                    <path d="M12 13v8m-4-4h8"/>
+                  </svg>
+                </div>
+                <h3 class="specialty-title">صحة المرأة (نساء)</h3>
+              </div>
+              <div class="expand-indicator" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </summary>
+            <div class="specialty-details-content">
+              <ul class="subservices-list">
+                <li>خدمات الدعم للحوامل (نفسي + حركي)</li>
+                <li>تأهيل ما بعد الحمل والولادة (طبيعية / قيصرية)</li>
+                <li>تأهيل قاع الحوض وسلس البول</li>
+                <li>الدعم النفسي للحوامل واكتئاب ما بعد الولادة</li>
+                <li>آلام الحوض المزمنة</li>
+                <li>انفصال عضلات البطن بعد الولادة</li>
+                <li>آلام الدورة الشهرية (تمارين مساعدة)</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Card 2: العظام والمفاصل -->
+          <details class="specialty-card">
+            <summary class="specialty-summary">
+              <div class="summary-main">
+                <div class="specialty-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 8a3 3 0 0 1 3-3h10a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3V8z"/>
+                    <path d="M9 12h6M12 9v6"/>
+                  </svg>
+                </div>
+                <h3 class="specialty-title">العظام والمفاصل</h3>
+              </div>
+              <div class="expand-indicator" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </summary>
+            <div class="specialty-details-content">
+              <ul class="subservices-list">
+                <li>آلام الظهر (أسفل وأعلى)</li>
+                <li>آلام الرقبة</li>
+                <li>الانزلاق الغضروفي وعرق النسا</li>
+                <li>خشونة المفاصل (الركبة، الورك، الكتف)</li>
+                <li>آلام الكتف والكتف المتجمد</li>
+                <li>التهاب الأوتار (كوع التنس، التهاب وتر أخيل)</li>
+                <li>انحناء العمود الفقري (الجنف) وتصحيح القوام</li>
+                <li>التأهيل بعد عمليات العظام (تغيير مفصل، تثبيت العمود الفقري)</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Card 3: الإصابات -->
+          <details class="specialty-card">
+            <summary class="specialty-summary">
+              <div class="summary-main">
+                <div class="specialty-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L4 7v6c0 5.5 3.5 10.7 8 12 4.5-1.3 8-6.5 8-12V7l-8-5z"/>
+                    <path d="M12 8v8m-4-4h8"/>
+                  </svg>
+                </div>
+                <h3 class="specialty-title">الإصابات</h3>
+              </div>
+              <div class="expand-indicator" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </summary>
+            <div class="specialty-details-content">
+              <ul class="subservices-list">
+                <li>الإصابات الرياضية (التواء، تمزق أربطة، شد عضلي)</li>
+                <li>إصابات الرباط الصليبي والغضروف الهلالي</li>
+                <li>التأهيل بعد الكسور والجبس</li>
+                <li>إصابات الحوادث</li>
+                <li>العودة الآمنة للرياضة</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Card 4: كبار السن -->
+          <details class="specialty-card">
+            <summary class="specialty-summary">
+              <div class="summary-main">
+                <div class="specialty-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="5" r="3"/>
+                    <path d="M12 8v6l3 4M9 15l3 3M6 21h12"/>
+                    <path d="M17 10v11"/>
+                  </svg>
+                </div>
+                <h3 class="specialty-title">كبار السن</h3>
+              </div>
+              <div class="expand-indicator" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </summary>
+            <div class="specialty-details-content">
+              <ul class="subservices-list">
+                <li>التوازن ومنع السقوط</li>
+                <li>خشونة المفاصل وتيبس الحركة</li>
+                <li>هشاشة العظام (تمارين داعمة)</li>
+                <li>التأهيل بعد كسر الحوض / الفخذ</li>
+                <li>تحسين الحركة والاستقلالية في الحياة اليومية</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Card 5: الأعصاب -->
+          <details class="specialty-card">
+            <summary class="specialty-summary">
+              <div class="summary-main">
+                <div class="specialty-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 2v7m0 6v7m-7-10H2m20 0h-7m-2.1-4.9l4.9-4.9m-9.8 9.8l-4.9 4.9m9.8 0l4.9 4.9m-14.7-9.8l4.9-4.9"/>
+                  </svg>
+                </div>
+                <h3 class="specialty-title">الأعصاب</h3>
+              </div>
+              <div class="expand-indicator" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </summary>
+            <div class="specialty-details-content">
+              <ul class="subservices-list">
+                <li>التأهيل بعد الجلطات والسكتة الدماغية</li>
+                <li>الشلل النصفي</li>
+                <li>الاعتلال العصبي (مثل السكر)</li>
+                <li>شلل العصب الوجهي</li>
+                <li>الانزلاق الغضروفي مع ضغط على العصب</li>
+                <li>أمراض الحركة (مثل الشلل الرعاش)</li>
+                <li>الفيبروميالجيا</li>
+                <li>الأعراض النفس-جسدية المرتبطة بالتوتر والقلق</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Card 6: الأطفال -->
+          <details class="specialty-card">
+            <summary class="specialty-summary">
+              <div class="summary-main">
+                <div class="specialty-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="8" r="4"/>
+                    <path d="M6 20v-2a6 6 0 0 1 12 0v2"/>
+                    <circle cx="9.5" cy="7.5" r=".75" fill="currentColor"/>
+                    <circle cx="14.5" cy="7.5" r=".75" fill="currentColor"/>
+                    <path d="M10 10c.7.7 2.3.7 3 0"/>
+                  </svg>
+                </div>
+                <h3 class="specialty-title">الأطفال</h3>
+              </div>
+              <div class="expand-indicator" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </summary>
+            <div class="specialty-details-content">
+              <ul class="subservices-list">
+                <li>تأخر النمو الحركي</li>
+                <li>الشلل الدماغي</li>
+                <li>مشاكل القدم (القدم المسطحة، المشي على الأطراف)</li>
+                <li>الجنف وتشوهات القوام عند الأطفال</li>
+                <li>التأهيل بعد الإصابات والكسور</li>
+                <li>ضعف العضلات</li>
+              </ul>
+            </div>
+          </details>
+
+          <!-- Card 7: الاستشارات النفسية والعلاج النفسي والدعم المتكامل -->
+          <details class="specialty-card specialty-card-featured">
+            <summary class="specialty-summary">
+              <div class="summary-main">
+                <div class="specialty-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="specialty-title">7) الاستشارات النفسية والعلاج النفسي والدعم المتكامل</h3>
+                </div>
+              </div>
+              <div class="expand-indicator" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </div>
+            </summary>
+            <div class="specialty-details-content">
+              <div class="subservice-group" style="margin-bottom: 1.5rem;">
+                <h4 style="font-size: 1.05rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.65rem; padding-bottom: 0.35rem; border-bottom: 1.5px solid rgba(111, 168, 199, 0.25);">أ) الاستشارات والعلاج النفسي:</h4>
+                <ul class="subservices-list">
+                  <li>القلق والتوتر</li>
+                  <li>الاكتئاب وأعراض الاكتئاب الحاد</li>
+                  <li>نوبات الهلع والوسواس القهري</li>
+                  <li>اضطرابات النوم</li>
+                  <li>الضغوط النفسية اليومية</li>
+                  <li>الصحة النفسية للمرأة (الحمل، ما بعد الولادة، الدورة الشهرية)</li>
+                  <li>استشارات العلاقات الأسرية وما قبل الزواج</li>
+                  <li>الأطفال والمراهقين (قلق، فرط حركة، مشاكل دراسية، عناد)</li>
+                  <li>كبار السن (اكتئاب، عزلة، خرف)</li>
+                  <li>الدعم النفسي لمرضى الجلطات والشلل والأمراض العصبية</li>
+                </ul>
+              </div>
+
+              <div class="subservice-group" style="margin-bottom: 1.5rem;">
+                <h4 style="font-size: 1.05rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.65rem; padding-bottom: 0.35rem; border-bottom: 1.5px solid rgba(111, 168, 199, 0.25);">ب) العلاج الطبيعي للأعراض النفس-جسدية (Psychosomatic):</h4>
+                <ul class="subservices-list">
+                  <li>آلام الجسم الناتجة عن التوتر والقلق</li>
+                  <li>الصداع التوتري وآلام الرقبة والكتف النفسية المنشأ</li>
+                  <li>آلام المعدة والقولون العصبي (دعم حركي وتنفسي)</li>
+                  <li>تسارع ضربات القلب وضيق التنفس المرتبط بالقلق (تمارين تنفس وتأهيل)</li>
+                  <li>الإجهاد المزمن والإنهاك</li>
+                  <li>الفيبروميالجيا (آلام العضلات الليفية المزمنة) — برنامج تأهيل متكامل</li>
+                  <li>آلام أسفل الظهر النفسية المنشأ</li>
+                  <li>تأهيل نفسي-حركي لمرضى الاكتئاب الحاد (لتحسين الحركة والنشاط)</li>
+                </ul>
+              </div>
+
+              <div class="subservice-group" style="margin-bottom: 1.5rem;">
+                <h4 style="font-size: 1.05rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.65rem; padding-bottom: 0.35rem; border-bottom: 1.5px solid rgba(111, 168, 199, 0.25);">ج) خدمات الدعم للحوامل:</h4>
+                <ul class="subservices-list">
+                  <li>الدعم النفسي أثناء الحمل</li>
+                  <li>التأهيل الحركي أثناء الحمل (آلام الظهر والحوض، تمارين آمنة)</li>
+                  <li>تخفيف قلق الحمل والاستعداد للولادة</li>
+                  <li>التعامل مع اكتئاب الحمل</li>
+                  <li>الاستعداد النفسي للولادة</li>
+                </ul>
+              </div>
+
+              <div class="subservice-group" style="margin-bottom: 1.5rem;">
+                <h4 style="font-size: 1.05rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.65rem; padding-bottom: 0.35rem; border-bottom: 1.5px solid rgba(111, 168, 199, 0.25);">د) تأهيل ما بعد الحمل والولادة:</h4>
+                <ul class="subservices-list">
+                  <li>التأهيل بعد الولادة الطبيعية</li>
+                  <li>التأهيل بعد الولادة القيصرية</li>
+                  <li>انفصال عضلات البطن بعد الولادة (Diastasis Recti)</li>
+                  <li>آلام أسفل الظهر والحوض بعد الولادة</li>
+                  <li>استعادة القوام واللياقة بعد الولادة</li>
+                  <li>الدعم النفسي لما بعد الولادة (اكتئاب ما بعد الولادة)</li>
+                </ul>
+              </div>
+
+              <div class="subservice-group">
+                <h4 style="font-size: 1.05rem; color: var(--dark-blue); font-weight: 700; margin-bottom: 0.65rem; padding-bottom: 0.35rem; border-bottom: 1.5px solid rgba(111, 168, 199, 0.25);">هـ) تأهيل قاع الحوض:</h4>
+                <ul class="subservices-list">
+                  <li>ضعف عضلات قاع الحوض</li>
+                  <li>سلس البول (Stress / Urge Incontinence)</li>
+                  <li>آلام الحوض المزمنة</li>
+                  <li>تدريب عضلات قاع الحوض (Kegel & Biofeedback)</li>
+                  <li>تأهيل قاع الحوض بعد الولادة</li>
+                  <li>تأهيل قاع الحوض قبل وبعد جراحات الحوض</li>
+                  <li>الدعم النفسي المرتبط بمشاكل قاع الحوض</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section reveal-section" id="booking">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">احجز استشارتك الآن</span>
+          <h2 class="section-title">احجز استشارتك</h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle">
+            خطوتك الأولى نحو التعافي واستعادة نشاطك. يرجى ملء بياناتك وسنقوم بالتواصل لتأكيد الموعد بأسرع وقت.
+          </p>
+        </div>
+
+        <div class="booking-card">
+          <div class="booking-header">
+            <div class="booking-icon-badge">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </div>
+            <h3>استمارة حجز استشارة</h3>
+            <p>لا يلزم إنشاء حساب أو تسجيل دخول. يمكنك ملء الاستمارة مباشرة وسيتم إرسال تأكيد فوري عبر واتساب.</p>
+          </div>
+
+          <!-- Functional Booking Form -->
+          <form class="booking-form" id="bookingForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bookingName">الاسم بالكامل <span class="required-star">*</span></label>
+                <input
+                  type="text"
+                  id="bookingName"
+                  name="name"
+                  class="form-control"
+                  placeholder="أدخل اسمك الكريم (3 أحرف على الأقل)"
+                  required
+                  minlength="3"
+                  autocomplete="name"
+                >
+                <span class="field-error" id="nameError" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="bookingPhone">رقم الموبايل (مصر) <span class="required-star">*</span></label>
+                <input
+                  type="tel"
+                  id="bookingPhone"
+                  name="phone"
+                  class="form-control phone-input"
+                  placeholder="01xxxxxxxxx"
+                  required
+                  maxlength="11"
+                  dir="ltr"
+                  autocomplete="tel"
+                >
+                <span class="field-error" id="phoneError" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="consultationType">نوع الاستشارة <span class="required-star">*</span></label>
+                <select id="consultationType" name="consultationType" class="form-control" required>
+                  <option value="" disabled selected>اختر نوع الاستشارة المطلوبة...</option>
+                  <option value="استشارة نفسية">استشارة نفسية</option>
+                  <option value="علاج نفسي / دعم نفسي">علاج نفسي / دعم نفسي</option>
+                  <option value="علاج طبيعي">علاج طبيعي</option>
+                  <option value="جلسة تأهيل حركي">جلسة تأهيل حركي</option>
+                  <option value="تأهيل قاع الحوض">تأهيل قاع الحوض</option>
+                  <option value="تأهيل ما بعد الحمل والولادة">تأهيل ما بعد الحمل والولادة</option>
+                  <option value="دعم نفسي للحوامل">دعم نفسي للحوامل</option>
+                  <option value="برنامج الفيبروميالجيا">برنامج الفيبروميالجيا</option>
+                  <option value="علاج الأعراض النفس-جسدية">علاج الأعراض النفس-جسدية</option>
+                  <option value="متابعة حالة">متابعة حالة</option>
+                </select>
+                <span class="field-error" id="consultationTypeError" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label>طريقة الاستشارة <span class="required-star">*</span></label>
+                <div class="consultation-methods" style="display: flex; gap: 1.5rem; align-items: center; min-height: 48px;">
+                  <label style="display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 600; color: var(--dark-blue);">
+                    <input type="radio" name="consultationMethod" value="أونلاين" checked required>
+                    <span>أونلاين</span>
+                  </label>
+                  <label style="display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer; font-weight: 600; color: var(--dark-blue);">
+                    <input type="radio" name="consultationMethod" value="حضوري" required>
+                    <span>حضوري</span>
+                  </label>
+                </div>
+                <span class="field-error" id="consultationMethodError" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bookingSpecialty">التخصص المطلوب <span class="required-star">*</span></label>
+                <select id="bookingSpecialty" name="specialty" class="form-control" required>
+                  <option value="" disabled selected>اختر التخصص المطلوب...</option>
+                  <option value="صحة المرأة (نساء)">صحة المرأة (نساء)</option>
+                  <option value="العظام والمفاصل">العظام والمفاصل</option>
+                  <option value="الإصابات">الإصابات</option>
+                  <option value="كبار السن">كبار السن</option>
+                  <option value="الأعصاب">الأعصاب</option>
+                  <option value="الأطفال">الأطفال</option>
+                  <option value="الاستشارات النفسية والعلاج النفسي والدعم المتكامل">الاستشارات النفسية والعلاج النفسي والدعم المتكامل</option>
+                </select>
+                <span class="field-error" id="specialtyError" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="bookingDate">التاريخ المطلوب <span class="required-star">*</span></label>
+                <input
+                  type="date"
+                  id="bookingDate"
+                  name="date"
+                  class="form-control"
+                  required
+                >
+                <span class="field-error" id="dateError" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="bookingTime">الوقت المطلوب <span class="required-star">*</span></label>
+                <select id="bookingTime" name="time" class="form-control" required>
+                  <option value="" disabled selected>اختر الوقت المناسب للاستشارة...</option>
+                  <option value="10:00">10:00 صباحاً</option>
+                  <option value="11:00">11:00 صباحاً</option>
+                  <option value="12:00">12:00 ظهراً</option>
+                  <option value="13:00">01:00 ظهراً</option>
+                  <option value="16:00">04:00 عصراً</option>
+                  <option value="17:00">05:00 مساءً</option>
+                  <option value="18:00">06:00 مساءً</option>
+                  <option value="19:00">07:00 مساءً</option>
+                  <option value="20:00">08:00 مساءً</option>
+                </select>
+                <span class="field-error" id="timeError" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="bookingNotes">ملاحظات إضافية أو وصف الحالة <span class="optional-tag">(اختياري)</span></label>
+                <input
+                  type="text"
+                  id="bookingNotes"
+                  name="notes"
+                  class="form-control"
+                  placeholder="نبذة مختصرة عن الشكوى أو أي ملاحظات تفيد الطبيبة"
+                >
+                <span class="field-error" id="notesError" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="booking-cta-box">
+              <button type="submit" id="bookingSubmitBtn" class="btn btn-primary btn-block">
+                <span>تأكيد طلب الاستشارة</span>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </button>
+
+              <div class="booking-direct-links">
+                <span>أو يمكنك حجز الاستشارة المباشر السريع عبر:</span>
+                <a href="tel:01017782403" class="direct-link">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1.02l-2.2 2.2z"/>
+                  </svg>
+                  اتصال: 01017782403
+                </a>
+                <a href="https://wa.me/201017782403" target="_blank" rel="noopener" class="direct-link whatsapp-link">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                    <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/>
+                  </svg>
+                  مراسلة واتساب
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Notification Toast (Slide-down modal/toast) -->
+    <div id="bookingToast" class="booking-toast" role="alert" aria-live="assertive" aria-hidden="true">
+      <div class="toast-card">
+        <div class="toast-header">
+          <div class="toast-header-title">
+            <span class="toast-check-icon">✓</span>
+            <h4 id="toastTitle">✅ تم استلام طلب الاستشارة</h4>
+          </div>
+          <button type="button" class="toast-close-btn" id="toastCloseBtn" aria-label="إغلاق التنبيه">&times;</button>
+        </div>
+        <div class="toast-body">
+          <div class="toast-badge-wrapper">
+            <span class="toast-booking-badge" id="toastBadge">
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+              </svg>
+              <span id="toastBadgeText">تم تسجيل طلب الاستشارة</span>
+            </span>
+          </div>
+          <p class="toast-message" id="toastMessage"></p>
+          <div class="toast-actions">
+            <a href="https://wa.me/201017782403" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp toast-btn" id="toastWhatsAppBtn">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/>
+              </svg>
+              <span>تواصل واتساب الآن</span>
+            </a>
+            <button type="button" class="btn btn-outline toast-btn" id="toastDismissBtn">إغلاق</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Section -->
+    <section class="contact-section reveal-section" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">تواصل دائم</span>
+          <h2 class="section-title">بيانات التواصل ومواعيد العمل</h2>
+          <div class="title-underline"></div>
+          <p class="section-subtitle">
+            نسعد باستقبال استفساراتكم وطلبات الاستشارة عبر مختلف قنوات التواصل.
+          </p>
+        </div>
+
+        <div class="contact-cards-grid">
+          <!-- Card: الهاتف -->
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <h3>الاتصال الهاتفي</h3>
+            <p>لحجز الاستشارة المباشر والاستفسارات السريعة</p>
+            <a href="tel:01017782403" class="contact-value phone-number">01017782403</a>
+          </div>
+
+          <!-- Card: واتساب -->
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/>
+              </svg>
+            </div>
+            <h3>محادثة واتساب</h3>
+            <p>لإرسال التقارير الطبية وتأكيد مواعيد الاستشارة</p>
+            <a href="https://wa.me/201017782403" target="_blank" rel="noopener" class="contact-value">01017782403</a>
+          </div>
+
+          <!-- Card: مواعيد العمل -->
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/>
+                <polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <h3>مواعيد عمل المنصة</h3>
+            <p>السبت - الخميس: 10:00 ص - 9:00 م</p>
+            <span class="contact-note">الجمعة: إجازة أسبوعية (أو بحجز مسبق)</span>
+          </div>
+
+          <!-- Card: مقر وخدمات الاستشارة -->
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <h3>مقر وخدمات الاستشارة</h3>
+            <p>منصة استاشيرني — استشارات أونلاين وحضورية مع د. أسماء رضا</p>
+            <span class="contact-note">الاستشارة بالحجز المسبق لضمان الخصوصية والراحة</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Floating WhatsApp Button -->
+  <a
+    href="https://wa.me/201017782403"
+    class="fab-whatsapp"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="تواصل معنا عبر واتساب — منصة استاشيرني مع د. أسماء رضا"
+    title="تواصل على واتساب"
+  >
+    <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor" aria-hidden="true">
+      <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm4.95 14.12c-.2.56-1.18 1.08-1.63 1.14-.42.06-.95.09-1.53-.1-.35-.11-.81-.27-1.39-.52-2.44-1.05-4.03-3.51-4.15-3.67-.12-.16-.98-1.3-.98-2.49 0-1.18.62-1.76.84-2 .22-.24.48-.3.64-.3l.46.01c.15 0 .35-.06.54.41.2.48.7 1.7.76 1.83.06.12.1.27.02.43-.08.16-.12.26-.24.4l-.36.42c-.12.12-.25.25-.1.49.14.24.63 1.04 1.36 1.68.93.83 1.72 1.09 1.96 1.21.24.12.38.1.52-.06.14-.16.58-.68.74-.91.16-.24.32-.2.54-.12.22.08 1.4.66 1.64.78.24.12.4.18.46.28.06.1.06.58-.14 1.14z"/>
+    </svg>
+    <span class="fab-tooltip">واتساب</span>
+  </a>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo" aria-label="اسم المنصة">استاشيرني</div>
+          <p>استاشيرني — منصة استشارات د. أسماء رضا. نهج طبي شامل لرعاية الجسد والنفس معاً.</p>
+          <!-- Social Media Placeholder Icons -->
+          <div class="footer-social" aria-label="وسائل التواصل الاجتماعي">
+            <a href="https://wa.me/201017782403" target="_blank" rel="noopener" class="social-icon" aria-label="تابعنا على واتساب">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"/>
+              </svg>
+            </a>
+            <a href="#" class="social-icon" aria-label="تابعنا على فيسبوك (قريباً)">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links-col">
+          <h4>روابط سريعة</h4>
+          <ul>
+            <li><a href="#hero">الرئيسية</a></li>
+            <li><a href="#about">عن المنصة</a></li>
+            <li><a href="#specialties">التخصصات</a></li>
+            <li><a href="#booking">احجز استشارة</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact-col">
+          <h4>لحجز الاستشارة والاستفسار</h4>
+          <p>هاتف: <a href="tel:01017782403" aria-label="اتصل بنا على 01017782403">01017782403</a></p>
+          <p>واتساب: <a href="https://wa.me/201017782403" target="_blank" rel="noopener" aria-label="راسلنا على واتساب">01017782403</a></p>
+          <p>المواعيد: السبت – الخميس، 10 ص – 9 م</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>استاشيرني — منصة استشارات د. أسماء رضا</p>
+        <p>جميع الحقوق محفوظة © 2025 استاشيرني</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
