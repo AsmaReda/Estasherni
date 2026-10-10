@@ -1,5 +1,6 @@
 /**
- * د. أسماء رضا - أخصائية علاج طبيعي وتأهيل واستشارات نفسية
+ * منصة استاشيرني - د. أسماء رضا
+ * استشارات علاج طبيعي وتأهيل واستشارات نفسية
  * Main JavaScript (script.js)
  * Vanilla ES6+ - UI interactions, mobile navigation, active section observer,
  * section reveal animations (IntersectionObserver), floating WhatsApp FAB,
@@ -27,13 +28,13 @@ function validatePhone(phone) {
  * @returns {string} - WhatsApp URL
  */
 function buildWhatsAppLink(data) {
-  const message = `مرحباً دكتورة أسماء، أنا ${data.name} حجزت موعد يوم ${data.date} الساعة ${data.time} في تخصص ${data.specialty}`;
+  const message = `مرحباً دكتورة أسماء، أنا ${data.name} من منصة استاشيرني، حجزت ${data.consultationType} في تخصص ${data.specialty} يوم ${data.date} الساعة ${data.time} (${data.consultationMethod})`;
   return `https://wa.me/201017782403?text=${encodeURIComponent(message)}`;
 }
 
 /**
  * Displays the slide-down success toast notification with booking details & action buttons
- * @param {Object} data - Booking data object { name, phone, specialty, date, time, notes }
+ * @param {Object} data - Booking data object { name, phone, consultationType, consultationMethod, specialty, date, time, notes }
  */
 function showSuccessToast(data) {
   const toast = document.getElementById('bookingToast');
@@ -54,15 +55,15 @@ function showSuccessToast(data) {
 
   // Populate toast content
   if (toastTitle) {
-    toastTitle.textContent = 'تم الحجز بنجاح';
+    toastTitle.textContent = '✅ تم استلام طلب الاستشارة';
   }
 
   if (toastBadgeText) {
-    toastBadgeText.textContent = `تم الحجز: ${data.date}`;
+    toastBadgeText.textContent = 'تم تسجيل طلب الاستشارة';
   }
 
   if (toastMessage) {
-    toastMessage.textContent = `شكراً ${data.name}، تم استلام طلب الحجز بتاريخ ${data.date} الساعة ${data.time}. برجاء التواصل مع الدكتورة على واتساب لتأكيد التفاصيل.`;
+    toastMessage.textContent = `أهلاً ${data.name}، تم تسجيل طلبك لـ ${data.consultationType} في تخصص ${data.specialty} يوم ${data.date} الساعة ${data.time} (${data.consultationMethod}). برجاء التواصل مع د. أسماء رضا على واتساب لتأكيد الموعد.`;
   }
 
   if (toastWhatsAppBtn) {
@@ -104,6 +105,7 @@ function initBookingForm() {
 
   const nameInput = document.getElementById('bookingName');
   const phoneInput = document.getElementById('bookingPhone');
+  const consultationTypeSelect = document.getElementById('consultationType');
   const specialtySelect = document.getElementById('bookingSpecialty');
   const dateInput = document.getElementById('bookingDate');
   const timeSelect = document.getElementById('bookingTime');
@@ -111,6 +113,8 @@ function initBookingForm() {
 
   const nameError = document.getElementById('nameError');
   const phoneError = document.getElementById('phoneError');
+  const consultationTypeError = document.getElementById('consultationTypeError');
+  const consultationMethodError = document.getElementById('consultationMethodError');
   const specialtyError = document.getElementById('specialtyError');
   const dateError = document.getElementById('dateError');
   const timeError = document.getElementById('timeError');
@@ -153,6 +157,7 @@ function initBookingForm() {
     phoneInput.value = phoneInput.value.replace(/\D/g, '').slice(0, 11);
     clearError(phoneInput, phoneError);
   });
+  consultationTypeSelect?.addEventListener('change', () => clearError(consultationTypeSelect, consultationTypeError));
   specialtySelect?.addEventListener('change', () => clearError(specialtySelect, specialtyError));
   dateInput?.addEventListener('change', () => clearError(dateInput, dateError));
   timeSelect?.addEventListener('change', () => clearError(timeSelect, timeError));
@@ -167,6 +172,11 @@ function initBookingForm() {
     // Reset previous errors
     clearError(nameInput, nameError);
     clearError(phoneInput, phoneError);
+    clearError(consultationTypeSelect, consultationTypeError);
+    if (consultationMethodError) {
+      consultationMethodError.textContent = '';
+      consultationMethodError.classList.remove('visible');
+    }
     clearError(specialtySelect, specialtyError);
     clearError(dateInput, dateError);
     clearError(timeSelect, timeError);
@@ -187,7 +197,19 @@ function initBookingForm() {
       if (!firstInvalidInput) firstInvalidInput = phoneInput;
     }
 
-    // 3. Validate Specialty
+    // 3. Validate Consultation Type
+    const consultationTypeVal = consultationTypeSelect ? consultationTypeSelect.value : '';
+    if (!consultationTypeVal) {
+      setError(consultationTypeSelect, consultationTypeError, 'يرجى اختيار نوع الاستشارة المطلوبة');
+      isValid = false;
+      if (!firstInvalidInput) firstInvalidInput = consultationTypeSelect;
+    }
+
+    // 4. Consultation Method (radio: أونلاين / حضوري)
+    const consultationMethodChecked = form.querySelector('input[name="consultationMethod"]:checked');
+    const consultationMethodVal = consultationMethodChecked ? consultationMethodChecked.value : 'أونلاين';
+
+    // 5. Validate Specialty
     const specialtyVal = specialtySelect ? specialtySelect.value : '';
     if (!specialtyVal) {
       setError(specialtySelect, specialtyError, 'يرجى اختيار التخصص الطبي المطلوب');
@@ -195,10 +217,10 @@ function initBookingForm() {
       if (!firstInvalidInput) firstInvalidInput = specialtySelect;
     }
 
-    // 4. Validate Date (Today until 2035-12-31)
+    // 6. Validate Date (Today until 2035-12-31)
     const dateVal = dateInput ? dateInput.value : '';
     if (!dateVal) {
-      setError(dateInput, dateError, 'يرجى تحديد تاريخ موعد الحجز');
+      setError(dateInput, dateError, 'يرجى تحديد تاريخ موعد الاستشارة');
       isValid = false;
       if (!firstInvalidInput) firstInvalidInput = dateInput;
     } else if (dateVal < todayFormatted) {
@@ -211,10 +233,10 @@ function initBookingForm() {
       if (!firstInvalidInput) firstInvalidInput = dateInput;
     }
 
-    // 5. Validate Time Slot
+    // 7. Validate Time Slot
     const timeVal = timeSelect ? timeSelect.value : '';
     if (!timeVal) {
-      setError(timeSelect, timeError, 'يرجى اختيار الوقت المناسب للموعد');
+      setError(timeSelect, timeError, 'يرجى اختيار الوقت المناسب للاستشارة');
       isValid = false;
       if (!firstInvalidInput) firstInvalidInput = timeSelect;
     }
@@ -230,6 +252,8 @@ function initBookingForm() {
       id: 'BK-' + Date.now(),
       name: nameVal,
       phone: phoneVal,
+      consultationType: consultationTypeVal,
+      consultationMethod: consultationMethodVal,
       specialty: specialtyVal,
       date: dateVal,
       time: timeVal,
@@ -239,9 +263,9 @@ function initBookingForm() {
 
     // Save to localStorage as a fallback log
     try {
-      const existingLogs = JSON.parse(localStorage.getItem('bookings') || '[]');
+      const existingLogs = JSON.parse(localStorage.getItem('estashirni_bookings') || '[]');
       existingLogs.push(bookingData);
-      localStorage.setItem('bookings', JSON.stringify(existingLogs));
+      localStorage.setItem('estashirni_bookings', JSON.stringify(existingLogs));
     } catch (err) {
       console.warn('LocalStorage error while saving booking:', err);
     }
@@ -381,7 +405,7 @@ function initScrollReveal() {
 }
 
 /**
- * Makes the "احجز الآن" CTA button in the navbar scroll to #booking
+ * Makes the "احجز استشارة" CTA button in the navbar scroll to #booking
  * and auto-focus the first visible form input after scroll animation.
  */
 function initBookingCtaFocus() {
